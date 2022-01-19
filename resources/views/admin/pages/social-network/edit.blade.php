@@ -8,26 +8,25 @@
           <!-- general form elements -->
           <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">Upcoming-Project Form </h3>
+              <h3 class="card-title">Social-NETWORK Form </h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form action="{{route('ucproject.update')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('socialnetwork.update')}}" method="POST" enctype="multipart/form-data">
               @csrf
               <div class="card-body">
                   <div class="mb-3">
                       <input type="hidden" name="id" value="{{$edit->id}}">
-                      <label for="formFileMultiple" class="form-label"> Image</label>
-                      <input class="form-control" type="file" name="image"  id="formFileMultiple" multiple>
-                      <img src="{{asset(BlogImage().$edit->image)}}" width="70px" height="70px" alt="img">
+                      <label for="formFileMultiple" class="form-label">Icon</label>
+                      <input class="form-control" type="text" value="{{$edit->icon}}" name="icon" id="formFileMultiple" multiple>
                     </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Name</label>
-                  <input type="text" name="name" value="{{$edit->name}}" class="form-control" id="exampleInputEmail1">
+                  <label for="exampleInputEmail1">Link</label>
+                  <input type="text" name="link" value="{{$edit->link}}" class="form-control" id="exampleInputEmail1">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">Year</label>
-                    <input type="text" name="year" value="{{$edit->year}}" class="form-control" id="exampleInputEmail1">
+                    <label for="exampleInputEmail1">Name</label>
+                    <input type="text" name="name" value="{{$edit->name}}" class="form-control" id="exampleInputEmail1">
                   </div>
               </div>
               <!-- /.card-body -->

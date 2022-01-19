@@ -9,6 +9,8 @@ use App\Models\Language;
 use App\Models\PortfolioName;
 use App\Models\PortfolioSocialMedia;
 use App\Models\Project;
+use App\Models\SocialNetwork;
+use App\Models\UpComingProjects;
 use App\Models\Work;
 use Illuminate\Http\Request;
 
@@ -22,6 +24,8 @@ class MainController extends Controller
         $work=Work::latest()->get();
         $education=Education::latest()->get();
         $language =Language::latest()->get();
-        return view('frontend.master',compact('name','social','about','project','work','education','language'));
+        $upcproject =UpComingProjects::latest()->get();
+        $network =SocialNetwork::latest()->get();
+        return view('frontend.master',compact('name','social','about','project','work','education','language','upcproject','network'));
     }
 }

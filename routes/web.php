@@ -79,6 +79,25 @@ Route::get('/ucproject-edit/{id}',[App\Http\Controllers\Admin\UcProjectControlle
 Route::post('/ucproject-update',[App\Http\Controllers\Admin\UcProjectController::class,'ucprojectUpdate'])->name('ucproject.update');
 Route::get('/ucproject-delete/{id}',[App\Http\Controllers\Admin\UcProjectController::class,'ucprojectDelete'])->name('ucproject.delete');
 
+
+//for-social-network
+
+Route::get('/social-network-index',[App\Http\Controllers\Admin\SocialNetworkcontroller::class,'socialnetworkIndex'])->name('socialnetwork.index');
+Route::get('/social-network-create',[App\Http\Controllers\Admin\SocialNetworkcontroller::class,'socialnetworkCreate'])->name('socialnetwork.create');
+Route::post('/social-network-store',[App\Http\Controllers\Admin\SocialNetworkcontroller::class,'socialnetworkStore'])->name('socialnetwork.store');
+Route::get('/social-network-edit/{id}',[App\Http\Controllers\Admin\SocialNetworkcontroller::class,'socialnetworkEdit'])->name('socialnetwork.edit');
+Route::post('/social-network-update',[App\Http\Controllers\Admin\SocialNetworkcontroller::class,'socialnetworkUpdate'])->name('socialnetwork.update');
+Route::get('/social-network-delete/{id}',[App\Http\Controllers\Admin\SocialNetworkcontroller::class,'socialnetworkDelete'])->name('socialnetwork.delete');
+
+
+//for-contact
+Route::get('/contact-index',[App\Http\Controllers\Admin\ContactController::class,'contactIndex'])->name('contact.index');
+Route::get('/contact-create',[App\Http\Controllers\Admin\ContactController::class,'contactCreate'])->name('contact.create');
+Route::post('/contact-store',[App\Http\Controllers\Admin\ContactController::class,'contactStore'])->name('contact.store');
+Route::get('/contact-edit{id}',[App\Http\Controllers\Admin\ContactController::class,'contactEdit'])->name('contact.edit');
+Route::post('/contact-update',[App\Http\Controllers\Admin\ContactController::class,'contactUpdate'])->name('contact.update');
+Route::get('/contact-delete{id}',[App\Http\Controllers\Admin\ContactController::class,'contactDelete'])->name('contact.delete');
+
 //frontend
 
 Route::get('/',[App\Http\Controllers\Frontend\MainController::class,'frontIndex'])->name('front.index');

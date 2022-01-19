@@ -14,4 +14,6 @@
 
     <title>Title page</title>
 
-  <link href="{{asset('frontend/assets/main.d8e0d294.css')}}" rel="stylesheet"></head>
+  <link href="{{asset('frontend/assets/css/main.d8e0d294.css')}}" rel="stylesheet"></head>
+  <link href="{{asset('frontend/assets/css/owl.carousel.min.css')}}" rel="stylesheet"></head>
+  <link href="{{asset('frontend/assets/css/owl.theme.default.min.css')}}" rel="stylesheet"></head>

@@ -33,50 +33,63 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{route('name.index')}}" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
+
+                    <i class="far fa-user"></i>
                   <p>Name</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('socialmedia.index')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                    <i class="fas fa-user-friends"></i>
                   <p>Social Media</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('about.index')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                    <i class="far fa-address-card"></i>
                   <p>About</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('project.index')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                    <i class="fas fa-project-diagram"></i>
                   <p>Project</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('work.index')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                    <i class="fas fa-briefcase"></i>
                   <p>Work</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('education.index')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                    <i class="fas fa-user-graduate"></i>
                   <p>Education</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('language.index')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                    <i class="fas fa-language"></i>
                   <p>Language</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{route('ucproject.index')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                    <i class="fas fa-project-diagram"></i>
                   <p>Upcoming-Project</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('socialnetwork.index')}}" class="nav-link">
+                    <i class="fas fa-project-diagram"></i>
+                  <p>Social Network</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('contact.index')}}" class="nav-link">
+                    <i class="fas fa-project-diagram"></i>
+                  <p>Contact</p>
                 </a>
               </li>
             </ul>

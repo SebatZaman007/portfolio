@@ -132,34 +132,29 @@
         <div class="card">
           <div class="card-block">
             <h2>Upcomimg Projects</h2>
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-
-
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-              <div class="item active">
-                <img src="{{asset('frontend/assets/images/img-05.jpg')}}" class="img-responsive" alt="...">
-                <div class="carousel-caption">
-                  <h3 class="h5">Jules for Bastion</h3>
-                  <p>2017</p>
+            <div class="owl-carousel projects-carousel  owl-theme">
+                @foreach ($upcproject as $item)
+                <div class="item">
+                  <img src="{{asset(BlogImage().$item->image)}}" class="img-responsive" alt="...">
+                  <div class="carousel-caption">
+                    <h3 class="h5">{{$item->name}}</h3>
+                    <p>{{$item->year}}</p>
+                  </div>
                 </div>
-              </div>
-              <div class="item">
-                <img src="{{asset('frontend/assets/images/img-06.jpg')}}" class="img-responsive" alt="...">
-                <div class="carousel-caption">
-                  <h3 class="h5">Jules for Bastion</h3>
-                  <p>2017</p>
-                </div>
-              </div>
-
-              <div class="item">
-                <img src="{{asset('frontend/assets/images/img-08.jpg')}}" class="img-responsive" alt="...">
-                <div class="carousel-caption">
-                  <h3 class="h5">Jules for Bastion</h3>
-                  <p>2017</p>
-                </div>
-              </div>
+                @endforeach
             </div>
+
+            {{-- <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+
+
+
+            <div class="carousel-inner" role="listbox">
+
+              </div>
+
+
+
 
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -168,7 +163,9 @@
               <li data-target="#carousel-example-generic" data-slide-to="2"></li>
             </ol>
 
-          </div>
+          </div> --}}
+
+
           </div>
         </div>
 
@@ -176,15 +173,13 @@
           <div class="card-block">
             <h2>Social Network</h2>
             <div class="row">
+              @foreach ($network as $item)
               <div class="col-md-3">
-                <p class="social-buttons"><a href="https://twitter.com/" title=""><span class="social-round-icon fa-icon"><i class="fa fa-twitter"></i></span>@David_Folley</a></p>
+                <p class="social-buttons"><a href="{{$item->link}}" title=""><span class="social-round-icon fa-icon"><i class="{{$item->icon}}"></i></span>{{$item->name}}</a></p>
               </div>
-              <div class="col-md-3">
-                <p class="social-buttons"><a href="https://www.linkedin.com/" title=""><span class="social-round-icon fa-icon"><i class="fa fa-linkedin"></i></span>David Folley</a></p>
-              </div>
-              <div class="col-md-3">
-                <p class="social-buttons"><a href="https://dribbble.com/" title=""><span class="social-round-icon fa-icon"><i class="fa fa-dribbble"></i></span>David Folley</a></p>
-              </div>
+
+              @endforeach
+
             </div>
           </div>
         </div>
@@ -192,15 +187,16 @@
         <div class="card">
           <div class="card-block">
             <h2>Contact</h2>
-            <form action="" class="reveal-content">
+            <form action="{{route('contact.store')}}" method="POST" class="reveal-content">
+                @csrf
               <div class="form-group">
-                <input type="email" class="form-control" id="email" placeholder="Email">
+                <input type="email" name="email" class="form-control" id="email" placeholder="Email">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" id="subject" placeholder="Subject">
+                <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject">
               </div>
               <div class="form-group">
-                <textarea class="form-control" rows="5" placeholder="Enter your message"></textarea>
+                <textarea class="form-control" rows="5" name="message" placeholder="Enter your message"></textarea>
               </div>
               <div class="form-group">
                 <button type="submit" class=" btn btn-primary">Send message</button>
@@ -217,5 +213,27 @@
 @include('frontend.includes.footer')
 
 @include('frontend.includes.scripts')
+
+@push('push_scripts')
+<script>
+    $('.projects-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:3
+        }
+    }
+})
+</script>
+
+@endpush
 
 </html>

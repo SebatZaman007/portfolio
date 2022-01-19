@@ -22,5 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(EducationTableSeeder::class);
         $this->call(LanguageTableSeeder::class);
         $this->call(UcProjectTableSeeder::class);
+        $this->call(SocialNetworkTableSeeder::class);
+        $this->call(ContactTableSeeder::class);
     }
 }
